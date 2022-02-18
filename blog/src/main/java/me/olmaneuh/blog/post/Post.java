@@ -1,34 +1,21 @@
 package me.olmaneuh.blog.post;
 
 import me.olmaneuh.blog.base.domain.BaseEntity;
-import me.olmaneuh.blog.user.User;
+import me.olmaneuh.blog.base.util.Constants;
 
-import java.time.LocalDate;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = Constants.TABLE_NAME_POST)
 public class Post extends BaseEntity {
 
     private String title;
     private String extract;
     private String body;
-    private User author;
-
-    public Post(Long id, LocalDate createdDate, LocalDate updatedDate, String title, String extract, String body, User author) {
-        super(id, createdDate, updatedDate);
-        this.title = title;
-        this.extract = extract;
-        this.body = body;
-        this.author = author;
-    }
-
-    public Post(String title, String extract, String body, User author) {
-        this.title = title;
-        this.extract = extract;
-        this.body = body;
-        this.author = author;
-    }
 
     public Post() {
-
+        super();
     }
 
     public String getTitle() {
@@ -53,14 +40,6 @@ public class Post extends BaseEntity {
 
     public void setBody(String body) {
         this.body = body;
-    }
-
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
     }
 
 }

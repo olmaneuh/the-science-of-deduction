@@ -1,9 +1,15 @@
 package me.olmaneuh.blog.base.domain;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.time.LocalDate;
 
+@MappedSuperclass
 public class BaseEntity {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private LocalDate createdDate;
     private LocalDate updatedDate;
