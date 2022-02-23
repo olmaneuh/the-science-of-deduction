@@ -14,7 +14,7 @@ public class Post extends BaseEntity {
     private String extract;
     private String body;
     @ManyToOne
-    @JoinColumn(foreignKey = @ForeignKey(name = Constants.TABLE_COLUMN_FK_USERS_POSTS))
+    @JoinColumn(foreignKey = @ForeignKey(name = Constants.TABLE_FK_USERS_POSTS))
     private User author;
 
     public Post() {
