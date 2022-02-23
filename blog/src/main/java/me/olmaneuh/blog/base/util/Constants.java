@@ -10,7 +10,7 @@ public class Constants {
     public static final String TABLE_COLUMN_NAME_FIRST_NAME = "first_name";
     public static final String TABLE_COLUMN_NAME_LAST_NAME = "last_name";
 
-    public static final String TABLE_FK_USERS_POSTS = "FK_USERS_POSTS";
+    public static final String TABLE_FK_USERS_POSTS = "fk_users_posts";
 
     private Constants() { }
 
