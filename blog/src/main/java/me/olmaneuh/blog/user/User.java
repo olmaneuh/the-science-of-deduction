@@ -2,22 +2,42 @@ package me.olmaneuh.blog.user;
 
 import me.olmaneuh.blog.base.domain.BaseEntity;
 import me.olmaneuh.blog.base.util.Constants;
+import me.olmaneuh.blog.post.Post;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = Constants.TABLE_NAME_USER)
 public class User extends BaseEntity {
 
+    @Column(name = Constants.TABLE_COLUMN_NAME_FIRST_NAME)
     private String firstName;
+    @Column(name = Constants.TABLE_COLUMN_NAME_LAST_NAME)
     private String lastName;
     private String email;
     private String username;
     private String password;
+    @Transient
+    List<Post> posts;
 
     public User() {
         super();
+        posts = new ArrayList<>();
+    }
+
+    public void addPost(Post post) {
+        if (post == null) { return; }
+        if (posts == null) { posts = new ArrayList<>(); }
+
+        posts.add(post);
+    }
+
+    public void removePost(Post post) {
+        if (post == null || posts == null || posts.isEmpty()) { return; }
+
+        posts.remove(post);
     }
 
     public String getFirstName() {
@@ -58,6 +78,14 @@ public class User extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
 }
