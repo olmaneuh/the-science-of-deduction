@@ -2,21 +2,20 @@ package me.olmaneuh.blog.base.domain;
 
 import me.olmaneuh.blog.base.util.Constants;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @MappedSuperclass
 public class BaseEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name = Constants.TABLE_COLUMN_NAME_CREATED_DATE)
+
+    @Column(name = Constants.TABLE_COLUMN_NAME_CREATED_DATE, nullable = false, updatable = false)
     private LocalDate createdDate;
-    @Column(name = Constants.TABLE_COLUMN_NAME_UPDATED_DATE)
+
+    @Column(name = Constants.TABLE_COLUMN_NAME_UPDATED_DATE, nullable = false)
     private LocalDate updatedDate;
 
     public BaseEntity() {

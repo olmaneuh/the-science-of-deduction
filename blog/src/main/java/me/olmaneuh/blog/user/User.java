@@ -12,14 +12,22 @@ import java.util.List;
 @Table(name = Constants.TABLE_NAME_USER)
 public class User extends BaseEntity {
 
-    @Column(name = Constants.TABLE_COLUMN_NAME_FIRST_NAME)
+    @Column(name = Constants.TABLE_COLUMN_NAME_FIRST_NAME, nullable = false)
     private String firstName;
-    @Column(name = Constants.TABLE_COLUMN_NAME_LAST_NAME)
+
+    @Column(name = Constants.TABLE_COLUMN_NAME_LAST_NAME, nullable = false)
     private String lastName;
+
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(unique = true, nullable = false)
     private String username;
+
+    @Column(nullable = false)
     private String password;
-    @Transient
+
+    @OneToMany(mappedBy = "author")
     List<Post> posts;
 
     public User() {
