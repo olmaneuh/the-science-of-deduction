@@ -1,0 +1,13 @@
+<form action="#" th:action="@{/create-user}" th:object="${user}" method="post">
+    <label for="firstName">First Name:</label>
+    <input type="text" field="*{firstName}" id="firstName" name="firstName" placeholder="First Name"/>
+    <label for="lastName">Last Name:</label>
+    <input type="text" field="*{lastName}" id="lastName" name="lastName" placeholder="Last Name"/>
+    <label for="email">Email:</label>
+    <input type="email" field="*{email}" id="email" name="email" placeholder="email@email.com"/>
+    <label for="username">Username:</label>
+    <input type="text" field="*{username}" id="username" name="username" placeholder="Username"/>
+    <label for="password">Password:</label>
+    <input type="password" field="*{password}" id="password" name="password" placeholder="************"/>
+    <input type="submit" value="Signup">
+</form>

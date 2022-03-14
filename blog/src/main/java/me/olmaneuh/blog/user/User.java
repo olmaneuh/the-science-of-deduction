@@ -35,19 +35,6 @@ public class User extends BaseEntity {
         posts = new ArrayList<>();
     }
 
-    public void addPost(Post post) {
-        if (post == null) { return; }
-        if (posts == null) { posts = new ArrayList<>(); }
-
-        posts.add(post);
-    }
-
-    public void removePost(Post post) {
-        if (post == null || posts == null || posts.isEmpty()) { return; }
-
-        posts.remove(post);
-    }
-
     public String getFirstName() {
         return firstName;
     }
