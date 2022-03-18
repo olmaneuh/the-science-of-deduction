@@ -20,7 +20,7 @@ public class UserController {
     }
 
     @GetMapping("/signup")
-    public String signup() {
+    public String displaySignupForm() {
         return "signup";
     }
 
