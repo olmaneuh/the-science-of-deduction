@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>The Science Of Deduction | Signup</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
-</head>
-<body>
-    <section class="vh-100 bg-image">
+<div th:replace="fragments/base_layout (template='::')">
+    <section id="signup-form" class="vh-100 bg-image">
         <div class="mask d-flex align-items-center h-100">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -49,8 +42,4 @@
             </div>
         </div>
     </section>
-
-    <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
-    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
-</body>
-</html>
+</div>
