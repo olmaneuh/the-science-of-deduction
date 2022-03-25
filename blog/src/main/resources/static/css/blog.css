@@ -1,0 +1,19 @@
+.bg-color-light-gray {
+    background-color: #F5F5F5;
+}
+
+.title {
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.btn-blue {
+    background-color: #1273eb;
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: #1067d3;
+    color: white;
+}
